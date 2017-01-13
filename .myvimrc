@@ -1,16 +1,13 @@
 set number
 set ruler
+set smartindent
+set autoindent
 set mouse=a
 syntax on
 colorscheme Tomorrow-Night
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+set t_Co=256
 inoremap ( ()<left>
 inoremap { {}<left>
 inoremap [ []<left>
+inoremap " ""<left>
+inoremap ' ''<left>
