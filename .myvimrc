@@ -1,13 +1,25 @@
+filetype plugin indent on
 set number
 set ruler
 set smartindent
 set autoindent
 set mouse=a
 syntax on
-colorscheme Tomorrow-Night
+colorscheme despacio
 set t_Co=256
 inoremap ( ()<left>
 inoremap { {}<left>
 inoremap [ []<left>
 inoremap " ""<left>
 inoremap ' ''<left>
+execute pathogen#infect()
+execute pathogen#infect('bundle/{}', '~/src/vim/bundle/{}')
+let g:rustfmt_autosave = 1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+autocmd vimenter * NERDTree
